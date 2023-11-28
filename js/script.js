@@ -1,60 +1,32 @@
 "use strict"
-let num = 90;
-while (num <= 150) {
-    console.log(num);
-    num++;
+const numberFilms = prompt('How many films have you already watched?');
+const personalMovieDB = {
+    count: numberFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    private: false
 }
-for (let i = 1; i <= 8; i++) {
-    if (i === 5) {
-        continue;
-    }
-    console.log(i);
-}
-let result = '';
-for (let i = 1; i <= 8; i++) {
-    for (let j = 0; j < i; j++) {
-        result += '*';
-    }
-    result += '\n';
-}
-console.log(result);
-for (let i = 1; i <= 10; i++) {
-    if (i % 2 === 0) {
-        console.log(i);
-    }
-    console.log(i);
-}
-for (let i = 2; i <= 16; i++) {
-    if (i % 2 === 0) {
-        continue;
+
+
+console.log(personalMovieDB);
+for (let i = 0; i < 2; i++) {
+    let lastMovie = prompt('one of the last movies you watched?');
+    let rate = prompt('how much would you rate this movie?');
+    if (lastMovie !== '' && lastMovie !== null && lastMovie.length < 50 && rate !== '' && rate !== null && rate.length < 50) {
+        personalMovieDB.movies[lastMovie] = rate;
+        console.log('done');
     } else {
-        console.log(i);
+        i--;
+        console.log('Error');
     }
 }
-let num1 = 2;
-while (num1 < 16) {
-    num1++;
-    if (num1 % 2 === 0) {
-        continue;
-    } else {
-        console.log(num1);
-    }
-}
-let arrayOfNumbers = [];
-for (let i = 5; i <= 10; i++) {
-    arrayOfNumbers[i - 5] = i;
-}
-console.log(arrayOfNumbers);
-const arr = [3, 5, 8, 16, 20, 23, 50];
-const result1 = [];
-for (let i = 0; i <= arr.length - 1; i++) {
-    result1[i] = arr[i];
-}
-console.log(result1);
-const data = [5, 10, 'Shopping', 20, 'Homework'];
-const result12 = [];
-let rat = [];
-for (let i = data.length - 1; i >= 0; i--) {
-    result12.push(data[i]);
-    console.log(result12);
+if (personalMovieDB.count < 10) {
+    console.log('Просмотрено довольно мало фильмов');
+} else if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
+    console.log('Классический зритель');
+} else if (personalMovieDB.count > 30) {
+    console.log('вы киноман');
+} else {
+    console.log('Произошла ошибка');
 }
