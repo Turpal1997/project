@@ -1,32 +1,38 @@
-"use strict"
-const numberFilms = prompt('How many films have you already watched?');
-const personalMovieDB = {
-    count: numberFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    private: false
+"use strict";
+
+function decidethis() {
+    let num = 89;
+    return num;
 }
-
-
-console.log(personalMovieDB);
-for (let i = 0; i < 2; i++) {
-    let lastMovie = prompt('one of the last movies you watched?');
-    let rate = prompt('how much would you rate this movie?');
-    if (lastMovie !== '' && lastMovie !== null && lastMovie.length < 50 && rate !== '' && rate !== null && rate.length < 50) {
-        personalMovieDB.movies[lastMovie] = rate;
-        console.log('done');
+const Num = decidethis();
+console.log(typeof (Num));
+const Eurcurr = 80;
+function exchange(amount, curr) {
+    let Answer = amount * curr;
+    return Answer;
+}
+let Numone = exchange(600, Eurcurr);
+console.log(Numone);
+function getMathResult(data, number) {
+    let part = '';
+    if (typeof (number) !== 'number' || number <= 0) {
+        return data;
     } else {
-        i--;
-        console.log('Error');
+        for (let i = 1; i <= number; i++) {
+            if (i === number) {
+                part += `${data * [i]}`
+            } else {
+                part += `${data * [i]}---`
+            }
+        }
+        return part
     }
 }
-if (personalMovieDB.count < 10) {
-    console.log('Просмотрено довольно мало фильмов');
-} else if (personalMovieDB.count > 10 && personalMovieDB.count <= 30) {
-    console.log('Классический зритель');
-} else if (personalMovieDB.count > 30) {
-    console.log('вы киноман');
-} else {
-    console.log('Произошла ошибка');
-}
+let top1 = 'sdsad'
+let pol = getMathResult(5, 3);
+console.log(pol);
+console.log(top1.indexOf('s'));
+let data1 = 'I was born in 1997.'
+console.log(data1.slice(0, 10));
+parseInt();
+Math.round();
