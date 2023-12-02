@@ -63,9 +63,3 @@ function showMyBD() {
     }
 }
 showMyBD();
-let top1 = 'sdsad'
-console.log(top1.indexOf('s'));
-let data1 = 'I was born in 1997.'
-console.log(data1.slice(0, 10));
-parseInt();
-Math.round();
