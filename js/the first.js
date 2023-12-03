@@ -1,9 +1,9 @@
 "use strict";
 let numberFilms;
 function start() {
-    numberFilms = prompt('How many films have you already watched?');
+    numberFilms = prompt('How many films have you already watched?').trim();
     while (numberFilms === '' || numberFilms === null || isNaN(numberFilms)) {
-        numberFilms = prompt('How many films have you already watched?');
+        numberFilms = prompt('How many films have you already watched?').trim();
     }
 }
 start();
@@ -18,10 +18,10 @@ function writeYourGenres() {
     let FaivoriteGen;
     for (let i = 1; i <= 3; i++) {
         if (FaivoriteGen !== null || FaivoriteGen !== '') {
-            FaivoriteGen = prompt(`Your faivorite genres under the number ${[i]}`, '')
+            FaivoriteGen = prompt(`Your faivorite genres under the number ${[i]}`, '').trim();
             personalMovieDB.genres[i - 1] = FaivoriteGen;
         } else {
-            FaivoriteGen = prompt(`Your faivorite genres under the number ${[i]}`)
+            FaivoriteGen = prompt(`Your faivorite genres under the number ${[i]}`);
         }
     }
 }
@@ -29,9 +29,9 @@ writeYourGenres();
 
 function rememberMyFilms() {
     for (let i = 0; i < 2; i++) {
-        let lastMovie = prompt('one of the last movies you watched?');
-        let rate = prompt('how much would you rate this movie?');
-        if (lastMovie !== '' && lastMovie !== null && lastMovie.length < 50 && rate !== '' && rate !== null && rate.length < 50) {
+        let lastMovie = prompt('one of the last movies you watched?').trim();
+        let rate = prompt('how much would you rate this movie?').trim();
+        if (lastMovie !== '' && lastMovie != null && lastMovie.length < 50 && rate !== '' && rate !== null && rate.length < 50) {
             personalMovieDB.movies[lastMovie] = rate;
             console.log('done');
         } else {
